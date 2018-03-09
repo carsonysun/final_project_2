@@ -17,7 +17,7 @@
 
       <% @accomplishments.each do |accomplishment| %>
       <tr>
-        <td><%= accomplishment.log_id %></td>
+        <td><%= accomplishment.log.date %></td>
         <td><%= accomplishment.milestone %></td>
         <td><%= accomplishment.image_url %></td>
         <td>
