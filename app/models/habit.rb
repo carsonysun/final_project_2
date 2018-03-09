@@ -5,4 +5,6 @@ class Habit < ApplicationRecord
 
   # Validations
 
+  validates :name, :length => { :minimum => 1, :maximum => 50 }
+
 end
