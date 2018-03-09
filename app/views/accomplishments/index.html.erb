@@ -17,7 +17,13 @@
 
       <% @accomplishments.each do |accomplishment| %>
       <tr>
-        <td><%= accomplishment.log.date %></td>
+        <td>
+          <% if accomplishment.log.present? %>
+            <a href="/logs/<%= accomplishment.log.id %>">
+              <%= accomplishment.log.date %>
+            </a>
+          <% end %>
+        </td>
         <td><%= accomplishment.milestone %></td>
         <td><%= accomplishment.image_url %></td>
         <td>

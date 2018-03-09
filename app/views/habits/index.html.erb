@@ -19,8 +19,20 @@
 
       <% @habits.each do |habit| %>
       <tr>
-        <td><%= habit.user.email %></td>
-        <td><%= habit.aspiration.name %></td>
+        <td>
+          <% if habit.user.present? %>
+            <a href="/users/<%= habit.user.id %>">
+              <%= habit.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if habit.aspiration.present? %>
+            <a href="/aspirations/<%= habit.aspiration.id %>">
+              <%= habit.aspiration.name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= habit.name %></td>
         <td><%= habit.goal %></td>
         <td><%= habit.days_per_week %></td>

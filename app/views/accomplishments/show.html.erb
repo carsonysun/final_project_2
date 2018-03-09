@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Log</dt>
-      <dd><%= @accomplishment.log_id %></dd>
+      <dd>
+        <% if @accomplishment.log.present? %>
+          <a href="/logs/<%= @accomplishment.log_id %>">
+            <%= @accomplishment.log.date %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Milestone</dt>
       <dd><%= @accomplishment.milestone %></dd>

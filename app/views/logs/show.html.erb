@@ -18,7 +18,13 @@
       <dd><%= @log.rating_of_the_day %></dd>
 
       <dt>Habit</dt>
-      <dd><%= @log.habit_id %></dd>
+      <dd>
+        <% if @log.habit.present? %>
+          <a href="/habits/<%= @log.habit_id %>">
+            <%= @log.habit.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

@@ -23,7 +23,13 @@
         <td><%= log.time_of_day %></td>
         <td><%= log.motivation_level %></td>
         <td><%= log.rating_of_the_day %></td>
-        <td><%= log.habit.user_id %></td>
+        <td>
+          <% if log.habit.present? %>
+            <a href="/habits/<%= log.habit.id %>">
+              <%= log.habit.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/logs/<%= log.id %>" class="btn btn-primary">Show</a>
           <a href="/logs/<%= log.id %>/edit" class="btn btn-warning">Edit</a>

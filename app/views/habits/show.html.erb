@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>User</dt>
-      <dd><%= @habit.user_id %></dd>
+      <dd>
+        <% if @habit.user.present? %>
+          <a href="/users/<%= @habit.user_id %>">
+            <%= @habit.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Aspiration</dt>
-      <dd><%= @habit.aspiration_id %></dd>
+      <dd>
+        <% if @habit.aspiration.present? %>
+          <a href="/aspirations/<%= @habit.aspiration_id %>">
+            <%= @habit.aspiration.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Name</dt>
       <dd><%= @habit.name %></dd>
