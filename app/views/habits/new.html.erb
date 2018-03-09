@@ -33,7 +33,7 @@
           Aspiration
         </label>
 
-        <input type="text" id="aspiration_id" name="aspiration_id" placeholder="Aspiration" class="form-control" value="<%= @habit.aspiration_id %>">
+        <%= select_tag(:aspiration_id, options_from_collection_for_select(Aspiration.all, :id, :name, @habit.aspiration_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for name -->
