@@ -1,4 +1,6 @@
 ActiveAdmin.register Habit do
+
+ permit_params :user_id, :aspiration_id, :name, :goal, :days_per_week
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
