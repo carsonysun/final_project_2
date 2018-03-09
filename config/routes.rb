@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "aspirations#index"
   # Routes for the Accomplishment resource:
   # CREATE
   get "/accomplishments/new", :controller => "accomplishments", :action => "new"
