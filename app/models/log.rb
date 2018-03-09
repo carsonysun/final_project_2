@@ -1,6 +1,8 @@
 class Log < ApplicationRecord
   # Direct associations
 
+  belongs_to :habit
+
   # Indirect associations
 
   # Validations
