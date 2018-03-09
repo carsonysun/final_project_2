@@ -5,6 +5,8 @@ class Habit < ApplicationRecord
 
   # Validations
 
+  validates :goal, :presence => { :message => "Why is this an important habit for you to develop?" }
+
   validates :goal, :length => { :minimum => 1, :maximum => 50 }
 
   validates :name, :uniqueness => { :message => "You are already working on this habit!" }
