@@ -5,6 +5,8 @@ class Aspiration < ApplicationRecord
 
   # Validations
 
+  validates :name, :presence => { :message => "What is your aspiration?" }
+
   validates :name, :length => { :minimum => 1, :maximum => 30 }
 
 end
