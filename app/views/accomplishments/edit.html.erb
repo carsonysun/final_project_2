@@ -24,7 +24,7 @@
           Log
         </label>
 
-        <input type="text" id="log_id" name="log_id" placeholder="Log" class="form-control" value="<%= @accomplishment.log_id %>">
+        <%= select_tag(:log_id, options_from_collection_for_select(Log.all, :id, :date, @accomplishment.log_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for milestone -->
