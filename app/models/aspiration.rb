@@ -6,6 +6,10 @@ class Aspiration < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :habits,
+             :source => :user
+
   # Validations
 
   validates :name, :uniqueness => { :message => "The aspiration already exists!" }
