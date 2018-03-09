@@ -20,7 +20,7 @@
       <% @habits.each do |habit| %>
       <tr>
         <td><%= habit.user.email %></td>
-        <td><%= habit.aspiration_id %></td>
+        <td><%= habit.aspiration.name %></td>
         <td><%= habit.name %></td>
         <td><%= habit.goal %></td>
         <td><%= habit.days_per_week %></td>
