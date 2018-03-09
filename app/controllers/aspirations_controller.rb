@@ -1,6 +1,7 @@
 class AspirationsController < ApplicationController
   def index
-    @aspirations = Aspiration.page(params[:page]).per(10)
+    @q = Aspiration.ransack(params[:q])
+    @aspirations = @q.result(:distinct => true).includes(:habits, :users).page(params[:page]).per(10)
 
     render("aspirations/index.html.erb")
   end

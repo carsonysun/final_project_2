@@ -10,7 +10,8 @@ class HabitsController < ApplicationController
   end
 
   def index
-    @habits = Habit.page(params[:page]).per(10)
+    @q = Habit.ransack(params[:q])
+    @habits = @q.result(:distinct => true).includes(:user, :aspiration, :logs).page(params[:page]).per(10)
 
     render("habits/index.html.erb")
   end
