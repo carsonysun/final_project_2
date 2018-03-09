@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h3>Log #<%= @log.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Date</dt>
+      <dd><%= @log.date %></dd>
+
+      <dt>Time of day</dt>
+      <dd><%= @log.time_of_day %></dd>
+
+      <dt>Motivation level</dt>
+      <dd><%= @log.motivation_level %></dd>
+
+      <dt>Rating of the day</dt>
+      <dd><%= @log.rating_of_the_day %></dd>
+
+      <dt>Habit</dt>
+      <dd><%= @log.habit_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/logs" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/logs/<%= @log.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_log/<%= @log.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

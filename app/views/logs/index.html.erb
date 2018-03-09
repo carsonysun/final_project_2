@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>
+    Logs
+    <a href="/logs/new" class="btn btn-lg btn-success">New Log</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Date</th>
+        <th>Time of day</th>
+        <th>Motivation level</th>
+        <th>Rating of the day</th>
+        <th>Habit</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @logs.each do |log| %>
+      <tr>
+        <td><%= log.date %></td>
+        <td><%= log.time_of_day %></td>
+        <td><%= log.motivation_level %></td>
+        <td><%= log.rating_of_the_day %></td>
+        <td><%= log.habit_id %></td>
+        <td>
+          <a href="/logs/<%= log.id %>" class="btn btn-primary">Show</a>
+          <a href="/logs/<%= log.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_log/<%= log.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
