@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Habit resource:
+  # CREATE
+  get "/habits/new", :controller => "habits", :action => "new"
+  post "/create_habit", :controller => "habits", :action => "create"
+
+  # READ
+  get "/habits", :controller => "habits", :action => "index"
+  get "/habits/:id", :controller => "habits", :action => "show"
+
+  # UPDATE
+  get "/habits/:id/edit", :controller => "habits", :action => "edit"
+  post "/update_habit/:id", :controller => "habits", :action => "update"
+
+  # DELETE
+  get "/delete_habit/:id", :controller => "habits", :action => "destroy"
+  #------------------------------
+
   # Routes for the Aspiration resource:
   # CREATE
   get "/aspirations/new", :controller => "aspirations", :action => "new"

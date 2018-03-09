@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @habit.errors.any? %>
+  <% @habit.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Habit</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_habit" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @habit.user_id %>">
+      </div>
+
+      <!-- Label and input for aspiration_id -->
+      <div class="form-group">
+        <label for="aspiration_id" class="control-label">
+          Aspiration
+        </label>
+
+        <input type="text" id="aspiration_id" name="aspiration_id" placeholder="Aspiration" class="form-control" value="<%= @habit.aspiration_id %>">
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @habit.name %>">
+      </div>
+
+      <!-- Label and input for goal -->
+      <div class="form-group">
+        <label for="goal" class="control-label">
+          Goal
+        </label>
+
+        <input type="text" id="goal" name="goal" placeholder="Goal" class="form-control" value="<%= @habit.goal %>">
+      </div>
+
+      <!-- Label and input for days_per_week -->
+      <div class="form-group">
+        <label for="days_per_week" class="control-label">
+          Days per week
+        </label>
+
+        <input type="text" id="days_per_week" name="days_per_week" placeholder="Days per week" class="form-control" value="<%= @habit.days_per_week %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Habit
+      </button>
+      or
+      <a href="/habits">Cancel</a>
+    </form>
+  </div>
+</div>
