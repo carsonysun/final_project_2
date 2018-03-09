@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   # Validations
 
+  validates :username, :presence => { :message => "Pick a username" }
+
   validates :username, :length => { :minimum => 5, :maximum => 25 }
 
   # Include default devise modules. Others available are:
