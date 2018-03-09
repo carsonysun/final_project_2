@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Accomplishment #<%= @accomplishment.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Log</dt>
+      <dd><%= @accomplishment.log_id %></dd>
+
+      <dt>Milestone</dt>
+      <dd><%= @accomplishment.milestone %></dd>
+
+      <dt>Image url</dt>
+      <dd><%= @accomplishment.image_url %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/accomplishments" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/accomplishments/<%= @accomplishment.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_accomplishment/<%= @accomplishment.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

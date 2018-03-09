@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Accomplishment resource:
+  # CREATE
+  get "/accomplishments/new", :controller => "accomplishments", :action => "new"
+  post "/create_accomplishment", :controller => "accomplishments", :action => "create"
+
+  # READ
+  get "/accomplishments", :controller => "accomplishments", :action => "index"
+  get "/accomplishments/:id", :controller => "accomplishments", :action => "show"
+
+  # UPDATE
+  get "/accomplishments/:id/edit", :controller => "accomplishments", :action => "edit"
+  post "/update_accomplishment/:id", :controller => "accomplishments", :action => "update"
+
+  # DELETE
+  get "/delete_accomplishment/:id", :controller => "accomplishments", :action => "destroy"
+  #------------------------------
+
   # Routes for the Log resource:
   # CREATE
   get "/logs/new", :controller => "logs", :action => "new"
