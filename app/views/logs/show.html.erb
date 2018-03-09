@@ -63,6 +63,38 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_accomplishment" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for log_id -->
+      <input type="hidden" name="log_id" value="<%= @log.id %>">
+
+      <!-- Label and input for milestone -->
+      <div class="form-group">
+        <label for="milestone" class="control-label">
+          Milestone
+        </label>
+
+        <input type="text" id="milestone" name="milestone" placeholder="Milestone" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for image_url -->
+      <div class="form-group">
+        <label for="image_url" class="control-label">
+          Image url
+        </label>
+
+        <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Accomplishment
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

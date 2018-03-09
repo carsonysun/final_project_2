@@ -65,6 +65,56 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_log" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for time_of_day -->
+      <div class="form-group">
+        <label for="time_of_day" class="control-label">
+          Time of day
+        </label>
+
+        <input type="text" id="time_of_day" name="time_of_day" placeholder="Time of day" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for motivation_level -->
+      <div class="form-group">
+        <label for="motivation_level" class="control-label">
+          Motivation level
+        </label>
+
+        <input type="text" id="motivation_level" name="motivation_level" placeholder="Motivation level" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for rating_of_the_day -->
+      <div class="form-group">
+        <label for="rating_of_the_day" class="control-label">
+          Rating of the day
+        </label>
+
+        <input type="text" id="rating_of_the_day" name="rating_of_the_day" placeholder="Rating of the day" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for habit_id -->
+      <input type="hidden" name="habit_id" value="<%= @habit.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Log
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

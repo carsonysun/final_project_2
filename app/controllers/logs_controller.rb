@@ -6,6 +6,7 @@ class LogsController < ApplicationController
   end
 
   def show
+    @accomplishment = Accomplishment.new
     @log = Log.find(params[:id])
 
     render("logs/show.html.erb")

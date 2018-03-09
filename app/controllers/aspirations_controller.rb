@@ -6,6 +6,7 @@ class AspirationsController < ApplicationController
   end
 
   def show
+    @habit = Habit.new
     @aspiration = Aspiration.find(params[:id])
 
     render("aspirations/show.html.erb")

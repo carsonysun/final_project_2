@@ -16,6 +16,7 @@ class HabitsController < ApplicationController
   end
 
   def show
+    @log = Log.new
     @habit = Habit.find(params[:id])
 
     render("habits/show.html.erb")
