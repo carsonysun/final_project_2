@@ -5,4 +5,6 @@ class Aspiration < ApplicationRecord
 
   # Validations
 
+  validates :name, :length => { :minimum => 1, :maximum => 30 }
+
 end
