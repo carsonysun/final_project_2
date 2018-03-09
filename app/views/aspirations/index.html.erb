@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>
+    Aspirations
+    <a href="/aspirations/new" class="btn btn-lg btn-success">New Aspiration</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @aspirations.each do |aspiration| %>
+      <tr>
+        <td><%= aspiration.name %></td>
+        <td>
+          <a href="/aspirations/<%= aspiration.id %>" class="btn btn-primary">Show</a>
+          <a href="/aspirations/<%= aspiration.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_aspiration/<%= aspiration.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
