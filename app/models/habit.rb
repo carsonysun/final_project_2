@@ -5,6 +5,8 @@ class Habit < ApplicationRecord
 
   # Validations
 
+  validates :days_per_week, :numericality => { :less_than_or_equal_to => 7, :greater_than_or_equal_to => 1 }
+
   validates :goal, :presence => { :message => "Why is this an important habit for you to develop?" }
 
   validates :goal, :length => { :minimum => 1, :maximum => 50 }
