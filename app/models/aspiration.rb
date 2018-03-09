@@ -1,6 +1,9 @@
 class Aspiration < ApplicationRecord
   # Direct associations
 
+  has_many   :habits,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
