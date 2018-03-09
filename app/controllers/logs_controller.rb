@@ -1,6 +1,6 @@
 class LogsController < ApplicationController
   def index
-    @logs = Log.all
+    @logs = Log.page(params[:page]).per(10)
 
     render("logs/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class AspirationsController < ApplicationController
   def index
-    @aspirations = Aspiration.all
+    @aspirations = Aspiration.page(params[:page]).per(10)
 
     render("aspirations/index.html.erb")
   end
